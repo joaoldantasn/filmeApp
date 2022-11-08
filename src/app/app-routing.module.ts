@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'criar-filme',
+    loadChildren: () => import('./pages/criar-filme/criar-filme.module').then( m => m.CriarFilmePageModule)
+  },
+  {
+    path: 'editar-filme/:id',
+    loadChildren: () => import('./pages/editar-filme/editar-filme.module').then( m => m.EditarFilmePageModule)
+  },
+  {
+    path: 'listar-filmes',
+    loadChildren: () => import('./pages/listar-filmes/listar-filmes.module').then( m => m.ListarFilmesPageModule)
+  },
+  {
+    path: 'listar-usuarios',
+    loadChildren: () => import('./pages/listar-usuarios/listar-usuarios.module').then( m => m.ListarUsuariosPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

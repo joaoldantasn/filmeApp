@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Criar Filme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formFilmes" (ngSubmit)="criarFilme()">
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Titulo
+      </ion-label>
+      <ion-input type="text" formControlName="titulo"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Lancamento
+      </ion-label>
+      <ion-input type="text" formControlName="lancamento"></ion-input>
+    </ion-item>
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Sinopse
+      </ion-label>
+      <ion-input type="text" formControlName="sinopse"></ion-input>
+
+      <!-- <ion-datetime formControlName="idade" displayFormat="MM/YYYY" showPicker="false" [(ngModel)]="usuarioSaved.idade"></ion-datetime> -->
+
+    </ion-item>
+
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Foto(url)
+      </ion-label>
+      <ion-input type="text" formControlName="foto"></ion-input>
+    </ion-item>
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Genero
+      </ion-label>
+      <ion-input type="text" formControlName="genero"></ion-input>
+    </ion-item>
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Classificacao
+      </ion-label>
+      <ion-input type="text" formControlName="classificacao"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item class="text-white">
+      <ion-label position="floating">
+        <ion-icon name="key-outline" item-start></ion-icon>
+        Arrecadacao
+      </ion-label>
+      <ion-input type="text" formControlName="arrecadacao"></ion-input>
+    </ion-item>
+
+    <br><br>
+
+    <ion-button size="large" color="success" expand="full" type="submit" [disabled]="!formFilmes.valid">Criar</ion-button>
+    <ion-button routerLink="/listar-filmes" expand="full" size="large" type="reset">Voltar</ion-button>
+
+  </form>
+
+</ion-content>

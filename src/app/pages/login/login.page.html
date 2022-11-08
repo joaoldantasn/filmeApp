@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{myapp}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{myapp}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h3>Login</h3>
+
+
+
+
+
+    <form [formGroup]="formLogin" (ngSubmit)="verificaSeTem()">
+      <ion-item class="text-white">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Usuario
+        </ion-label>
+        <ion-input type="text" formControlName="login"></ion-input>
+      </ion-item>
+
+
+      <ion-item class="text-white">
+        <ion-label position="floating">
+          <ion-icon name="key-outline" item-start></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+      </ion-item>
+
+      <br><br>
+
+      <ion-button size="large" color="success" expand="full" type="submit" [disabled]="!formLogin.valid">Entrar</ion-button>
+    </form>
+  </div>
