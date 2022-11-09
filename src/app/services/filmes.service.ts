@@ -28,9 +28,9 @@ export class FilmesService {
     return collectionData(filmesRef, {idField: 'id'}) as Observable<Filme[]>;
   }
 
-  getFilme(id): Observable<Filme[]>{
+  getFilme(id: number): Observable<Filme>{
     const filmeDocRef = doc(this.firestore, `filmes/${id}`);
-    return docData(filmeDocRef, {idField: 'id'}) as Observable<Filme[]>;
+    return docData(filmeDocRef, {idField: 'id'}) as Observable<Filme>;
   }
 
   addFilme(filme: Filme){
@@ -43,9 +43,8 @@ export class FilmesService {
   }
 
   updateFilme(id, filme: Filme){
-    const filmeDocRef = doc(this.firestore, `filmes/${filme.id}`);
-    return updateDoc(filmeDocRef, {id: filme.id, titulo: filme.titulo, lancamento: filme.lancamento, sinopse: filme.sinopse, foto: filme.foto, genero: filme.genero, classificacao: filme.classificacao,
-    arrecadacao: filme.arrecadacao });
+    const filmeDocRef = doc(this.firestore, `filmes/${id}`);
+    return updateDoc(filmeDocRef, {filme});
   }
 
 }

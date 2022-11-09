@@ -6,7 +6,7 @@ import { AlertController } from '@ionic/angular';
 import { FilmesService } from 'src/app/services/filmes.service';
 
 export interface Filme {
-  id?: number;
+  id: number;
   titulo: string;
   lancamento: string;
   sinopse: string;
@@ -25,8 +25,7 @@ export class EditarFilmePage implements OnInit {
 
   public formFilmes: FormGroup;
   public userId: number;
-  public filme: Filme;
-
+	public filme: Filme;
 
   constructor(private route: ActivatedRoute,
 		private formBuilder: FormBuilder, private filmesService: FilmesService, private router: Router, private alertController: AlertController) { }
@@ -34,25 +33,25 @@ export class EditarFilmePage implements OnInit {
   ngOnInit(): void {
     this.formFilmes = this.formBuilder.group({
 			titulo: [null, Validators.compose([Validators.required, Validators.minLength(7)])],
-			lancamento: [null, Validators.compose([Validators.required, Validators.min(41900)])],
+			lancamento: [null, Validators.compose([Validators.required, Validators.min(1900)])],
 			sinopse: [null, Validators.compose([Validators.required, Validators.minLength(30)])],
 			foto: [null, Validators.compose([Validators.required, Validators.minLength(10)])],
 			genero: [null, Validators.compose([Validators.required, Validators.minLength(3)])],
-			classificacao: [null, Validators.compose([Validators.required, Validators.minLength(3)])],
+			classificacao: [null, Validators.compose([Validators.required, Validators.minLength(1)])],
 			arrecadacao: [null, Validators.compose([Validators.required, Validators.minLength(3)])],
 
 		});
-    this.userId = this.route.snapshot.params.id;
+		this.userId = this.route.snapshot.params.id;
 		this.filmesService.getFilme(this.userId).subscribe(response => {
 			this.filme = response;
 
 			this.formFilmes = this.formBuilder.group({
 				titulo: [this.filme.titulo, Validators.compose([Validators.required, Validators.minLength(7)])],
-				lancamento: [this.filme.lancamento, Validators.compose([Validators.required, Validators.min(41900)])],
+				lancamento: [this.filme.lancamento, Validators.compose([Validators.required, Validators.min(1900)])],
 				sinopse: [this.filme.sinopse, Validators.compose([Validators.required, Validators.minLength(30)])],
 				foto: [this.filme.foto, Validators.compose([Validators.required, Validators.minLength(10)])],
 				genero: [this.filme.genero, Validators.compose([Validators.required, Validators.minLength(3)])],
-				classificacao: [this.filme.classificacao, Validators.compose([Validators.required, Validators.minLength(3)])],
+				classificacao: [this.filme.classificacao, Validators.compose([Validators.required, Validators.minLength(1)])],
 				arrecadacao: [this.filme.arrecadacao, Validators.compose([Validators.required, Validators.minLength(3)])],
 
 			});

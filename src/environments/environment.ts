@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyBIDn8RuJRiuIwUDVPzDay_9YpoKS2MePs",
-    authDomain: "filmesapp-e20d0.firebaseapp.com",
-    databaseURL: "https://filmesapp-e20d0-default-rtdb.firebaseio.com",
-    projectId: "filmesapp-e20d0",
-    storageBucket: "filmesapp-e20d0.appspot.com",
-    messagingSenderId: "264925923113",
-    appId: "1:264925923113:web:3d20a4e6fb9cd8ecd01938",
-    measurementId: "G-0KCP48R35M"
+    apiKey: 'AIzaSyBIDn8RuJRiuIwUDVPzDay_9YpoKS2MePs',
+    authDomain: 'filmesapp-e20d0.firebaseapp.com',
+    projectId: 'filmesapp-e20d0',
+    storageBucket: 'filmesapp-e20d0.appspot.com',
+    messagingSenderId: '264925923113',
+    appId: '1:264925923113:web:3d20a4e6fb9cd8ecd01938',
+    measurementId: 'G-0KCP48R35M'
   }
 };
 
